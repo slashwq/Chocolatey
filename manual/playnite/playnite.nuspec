@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>playnite</id>
+    <version>4.2.1</version>
+    <title>Playnite</title>
+    <authors>Josef Numec</authors>
+    <owners>Hyp5r</owners>
+    <projectUrl>https://playnite.link</projectUrl>
+    <licenseUrl>https://github.com/JosefNemec/Playnite/blob/master/LICENSE.md</licenseUrl>
+    <iconUrl>http://cdn.rawgit.com/hyp5r/choco/master/icons/playnite.png</iconUrl>
+    <projectSourceUrl>https://github.com/JosefNemec/Playnite</projectSourceUrl>
+    <tags>playnite SPACE_SEPARATED</tags>
+    <description>Open source video game library manager and launcher with support for 3rd party libraries like Steam, GOG, Origin, Battle.net and Uplay. Including game emulation support, providing one unified interface for your games.</description>
+  </metadata>
+</package>
