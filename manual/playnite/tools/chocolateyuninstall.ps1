@@ -5,7 +5,7 @@ $packageArgs = @{
   softwareName  = 'Playnite'
   fileType      = 'exe'
   validExitCodes= @(0)
-  silentArgs    = '/S'
+  silentArgs    = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART'
 }
 
 $uninstalled = $false
