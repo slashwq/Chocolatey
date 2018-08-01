@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>encrypto</id>
+    <version>1.0.1</version>
+    <title>Encrypto</title>
+    <authors>MacPaw</authors>
+    <owners>Hyp5r</owners>
+    <projectUrl>https://macpaw.com/encrypto</projectUrl>
+    <licenseUrl>https://macpaw.com/eula</licenseUrl>
+    <iconUrl>https://raw.githubusercontent.com/Hyp5r/choco/master/icons/encrypto.png</iconUrl>
+    <packageSourceUrl>https://github.com/Hyp5r/choco</packageSourceUrl>
+    <tags>encryption aes security</tags>
+    <summary>Encrypto lets you encrypt files before sending them to friends or coworkers. Drop a file into Encrypto, set a password, and then send it with added security.</summary>
+    <description>
+#### Secure any file with AES-256 encryption
+Encrypto takes any file or folder and adds AES-256 encryption to it. With encryption, you know your file is incredibly secure and that only the right person can access it.
+
+#### Send files securely
+Send encrypted files via email, Messages, AirDrop, Dropbox, carrier pigeon with USB stick — however you send them, your files are protected.
+
+#### Or save them to disk
+With Encrypto, not only can you encrypt and share files, but you can also save them to your own disk. Select your files, put them through Encrypto, and voilà — they’re protected.
+
+#### Hide the original
+Why stop at encryption? Encrypto’s got seamless integration with Hider 2, which lets you hide your files and make them invisible to everyone — but you, of course.
+</description>
+  </metadata>
+</package>
