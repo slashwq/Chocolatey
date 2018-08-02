@@ -1,4 +1,4 @@
-# <img src="https://raw.githubusercontent.com/Hyp5r/choco/master/icons/encrypto.png" width="48" height="48" /> Encrypto
+# <img src="https://raw.githubusercontent.com/Hyp5r/choco/master/_icons/encrypto.png" width="48" height="48" /> Encrypto
 
 Encrypto lets you encrypt files before sending them to friends or coworkers. Drop a file into Encrypto, set a password, and then send it with added security.
 

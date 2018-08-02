@@ -10,7 +10,7 @@
     <owners>Hyp5r</owners>
     <projectUrl>https://playnite.link</projectUrl>
     <licenseUrl>https://github.com/JosefNemec/Playnite/blob/master/LICENSE.md</licenseUrl>
-    <iconUrl>https://raw.githubusercontent.com/Hyp5r/choco/master/icons/playnite.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/Hyp5r/choco/master/_icons/playnite.png</iconUrl>
     <projectSourceUrl>https://github.com/JosefNemec/Playnite</projectSourceUrl>
     <packageSourceUrl>https://github.com/Hyp5r/choco</packageSourceUrl>
     <tags>playnite game management launcher steam gog uplay emulator battlenet origin</tags>

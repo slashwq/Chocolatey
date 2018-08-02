@@ -1,4 +1,4 @@
-# <img src="https://raw.githubusercontent.com/Hyp5r/choco/master/icons/playnite.png" width="48" height="48" /> Playnite
+# <img src="https://raw.githubusercontent.com/Hyp5r/choco/master/_icons/playnite.png" width="48" height="48" /> Playnite
 
 Open source video game library manager and launcher with support for 3rd party libraries like Steam, GOG, Origin, Battle.net and Uplay. Including game emulation support, providing one unified interface for your games.
 
