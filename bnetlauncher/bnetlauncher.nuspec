@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>bnetlauncher</id>
+    <version>1.21</version>
+    <title>bnetlauncher</title>
+    <authors>dafzor</authors>
+    <owners>Hyp5r</owners>
+    <projectUrl>https://madalien.com/stuff/bnetlauncher/</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/Hyp5r/choco/master/_icons/bnetlauncher.png</iconUrl>
+    <packageSourceUrl>https://github.com/Hyp5r/choco</packageSourceUrl>
+    <tags>blizzard battle.net steam launcher</tags>
+    <summary>Launcher utility to help start battle.net games with the steam overlay.</summary>
+    <description>Ever since steam allowed to add non steam games to it that it become my gaming hub having all my games there ready to be launched.
+There’s many ways to add blizzard games to steam, but I’ve made bnetlauncher to be the simplest method while retaining the benefits of automatic login.</description>
+  </metadata>
+</package>
