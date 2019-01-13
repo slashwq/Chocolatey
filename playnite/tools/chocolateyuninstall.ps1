@@ -6,6 +6,8 @@ $packageArgs = @{
   fileType      = 'exe'
   validExitCodes= @(0)
   silentArgs    = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART'
+  # softwareExe added 2018-01-13 due to the uninstaller not killing the process properly.
+  softwareExe   = 'PlayniteUI'
 }
 
 $uninstalled = $false
@@ -14,6 +16,9 @@ $uninstalled = $false
 if ($key.Count -eq 1) {
   $key | % {
     $packageArgs['file'] = "$($_.UninstallString)"
+    # Stop-Process called before the uninstall to make sure uninstall goes through successfully.
+    Write-Host Killing the $packageArgs['softwareExe'] process...
+    Stop-Process -ProcessName $packageArgs['softwareExe']
     Uninstall-ChocolateyPackage  @packageArgs
   }
 } elseif ($key.Count -eq 0) {
