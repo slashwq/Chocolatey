@@ -3,8 +3,8 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>playnite</id>
-    <version>4.67</version>
-    <releaseNotes>https://github.com/JosefNemec/Playnite/releases/tag/4.67</releaseNotes>
+    <version>6.4</version>
+    <releaseNotes>https://playnite.link/forum/thread-52.html</releaseNotes>
     <title>Playnite</title>
     <authors>Josef Numec</authors>
     <owners>Hyp5r</owners>
@@ -12,7 +12,7 @@
     <licenseUrl>https://github.com/JosefNemec/Playnite/blob/master/LICENSE.md</licenseUrl>
     <iconUrl>https://raw.githubusercontent.com/Hyp5r/choco/master/_icons/playnite.png</iconUrl>
     <projectSourceUrl>https://github.com/JosefNemec/Playnite</projectSourceUrl>
-    <packageSourceUrl>https://github.com/Hyp5r/choco</packageSourceUrl>
+    <packageSourceUrl>https://git.hyp5r.io/william/choco</packageSourceUrl>
     <tags>playnite game management launcher steam gog uplay emulator battlenet origin</tags>
     <summary>Open source video game library manager and launcher with support for 3rd party libraries like Steam, GOG, Origin, Battle.net and Uplay. Including game emulation support, providing one unified interface for your games.</summary>
     <description>**Playnite** is open source video game library manager with one simple goal: Provide unified interface for all your games.
