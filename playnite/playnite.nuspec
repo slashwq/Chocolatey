@@ -10,9 +10,9 @@
     <owners>Hyp5r</owners>
     <projectUrl>https://playnite.link</projectUrl>
     <licenseUrl>https://github.com/JosefNemec/Playnite/blob/master/LICENSE.md</licenseUrl>
-    <iconUrl>https://raw.githubusercontent.com/Hyp5r/choco/master/_icons/playnite.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/Hyp5r/Chocolatey/master/_icons/playnite.png</iconUrl>
     <projectSourceUrl>https://github.com/JosefNemec/Playnite</projectSourceUrl>
-    <packageSourceUrl>https://git.hyp5r.io/william/choco</packageSourceUrl>
+    <packageSourceUrl>https://github.com/Hyp5r/Chocolatey</packageSourceUrl>
     <tags>playnite game management launcher steam gog uplay emulator battlenet origin</tags>
     <summary>Open source video game library manager and launcher with support for 3rd party libraries like Steam, GOG, Origin, Battle.net and Uplay. Including game emulation support, providing one unified interface for your games.</summary>
     <description>**Playnite** is open source video game library manager with one simple goal: Provide unified interface for all your games.

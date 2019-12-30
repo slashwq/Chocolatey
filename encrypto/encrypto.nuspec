@@ -9,8 +9,8 @@
     <owners>Hyp5r</owners>
     <projectUrl>https://macpaw.com/encrypto</projectUrl>
     <licenseUrl>https://macpaw.com/eula</licenseUrl>
-    <iconUrl>https://raw.githubusercontent.com/Hyp5r/choco/master/_icons/encrypto.png</iconUrl>
-    <packageSourceUrl>https://github.com/Hyp5r/choco</packageSourceUrl>
+    <iconUrl>https://raw.githubusercontent.com/Hyp5r/Chocolatey/master/_icons/encrypto.png</iconUrl>
+    <packageSourceUrl>https://github.com/Hyp5r/Chocolatey</packageSourceUrl>
     <tags>encryption aes security</tags>
     <summary>Encrypto lets you encrypt files before sending them to friends or coworkers. Drop a file into Encrypto, set a password, and then send it with added security.</summary>
     <description>
