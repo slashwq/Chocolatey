@@ -51,4 +51,7 @@ Playnite doesn't store any user information. It stores the same amount of inform
 Playnite can automatically download metadata for your custom games (covers, descriptions and other information).
     </description>
   </metadata>
+  <files>
+    <file src=".\tools\*" target="tools" />
+  </files>
 </package>
