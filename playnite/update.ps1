@@ -1,6 +1,6 @@
-﻿### Check version of PowerShell - only tested on PowerShell 7
+﻿### Starting variables
 #Requires -Version 7
-
+Set-Location -Path $pwd
 $ProgressPreference = 'SilentlyContinue'
 
 $local = @{
@@ -10,8 +10,8 @@ $local = @{
   checksum         = Get-Content .\tools\chocolateyinstall.ps1 | Select-String -Pattern 'checksum      ' | Select-Object -ExpandProperty Line
   nuspecpath       = ".\playnite.nuspec"
   nuspec           = Get-Content .\playnite.nuspec
-  version          = Get-Content .\playnite.nuspec | Select-String -Pattern '(?<=\<version\>).*?(?=\<\/version\>)' -AllMatches | ForEach {$_.matches.value}
-  releaseNotes     = Get-Content .\playnite.nuspec | Select-String -Pattern '(?<=\<releaseNotes\>).*?(?=\<\/releaseNotes\>)' -AllMatches | ForEach {$_.matches.value}
+  version          = Get-Content .\playnite.nuspec | Select-String -Pattern '(?<=\<version\>).*?(?=\<\/version\>)' -AllMatches | ForEach-Object {$_.matches.value}
+  releaseNotes     = Get-Content .\playnite.nuspec | Select-String -Pattern '(?<=\<releaseNotes\>).*?(?=\<\/releaseNotes\>)' -AllMatches | ForEach-Object {$_.matches.value}
 }
 
 $remote = @{
@@ -40,14 +40,13 @@ Write-Host 'Downloading Playnite' $remote.info.latestVersion '...'
 Invoke-WebRequest $fulldl -OutFile $env:TEMP\playnite.exe
 
 ### Grab the SHA256 of the download for Chocolatey
-$newchecksum = Get-FileHash -Algorithm SHA256 -Path $env:TEMP\playnite.exe | foreach { $_.Hash }
+$newchecksum = Get-FileHash -Algorithm SHA256 -Path $env:TEMP\playnite.exe | ForEach-Object { $_.Hash }
 Write-Host ''
 Write-Host 'Playnite' $remote.info.latestVersion 'downloaded to' $env:TEMP'\playnite.exe'
 Write-Host 'SHA256 is' $newchecksum
 Write-Host ''
 Write-Host 'Sleeping 10 seconds before editing Chocolatey files ...'
 Write-Host ''
-
 Start-Sleep -Seconds 10
 
 ### Delete the temp file - we no longer need it
@@ -57,21 +56,19 @@ Remove-Item -Path $env:TEMP\playnite.exe
 $newurl = "`$url        = '$fulldl'"
 $newchecksumline = "  checksum      = '$newchecksum'"
   
-### Update the Chocolatey install PS1 and the nuspec file
-$local.chocoinstall | foreach { $_.replace($local.url,$newurl) } | Set-Content -Path $local.chocoinstallpath -Encoding UTF8
+### Update the Chocolatey install PS1 and the nuspec file.
+$local.chocoinstall | ForEach-Object { $_.replace($local.url,$newurl) } | Set-Content -Path $local.chocoinstallpath -Encoding UTF8
 Write-Host 'Updated' $local.chocoinstallpath 'URL value'
 Start-Sleep -Milliseconds 500
-# Bug fix because for some reason it's not reading the file again as expected.
 $local.chocoinstall = Get-Content .\tools\chocolateyinstall.ps1
-$local.chocoinstall | foreach { $_.replace($local.checksum,$newchecksumline) } | Set-Content -Path $local.chocoinstallpath
+$local.chocoinstall | ForEach-Object { $_.replace($local.checksum,$newchecksumline) } | Set-Content -Path $local.chocoinstallpath
 Write-Host 'Updated' $local.chocoinstallpath 'checksum value'
 Start-Sleep -Milliseconds 500
-$local.nuspec | foreach { $_.replace($local.version,$remote.info.latestVersion) } | Set-Content -Path $local.nuspecpath
+$local.nuspec | ForEach-Object { $_.replace($local.version,$remote.info.latestVersion) } | Set-Content -Path $local.nuspecpath
 Write-Host 'Updated' $local.nuspecpath 'version value'
 Start-Sleep -Milliseconds 500
-# Bug fix because for some reason it's not reading the file again as expected.
 $local.nuspec = Get-Content .\playnite.nuspec
-$local.nuspec | foreach { $_.replace($local.releaseNotes,$fullrn) } | Set-Content -Path $local.nuspecpath
+$local.nuspec | ForEach-Object { $_.replace($local.releaseNotes,$fullrn) } | Set-Content -Path $local.nuspecpath
 Write-Host 'Updated' $local.nuspecpath 'releaseNotes value'
 
 ### Compile the new Chocolatey package.
@@ -79,4 +76,8 @@ choco pack $local.nuspecpath
 
 ### Upload the new Chocolatey package.
 $nupkg = 'playnite.' + $remote.info.latestVersion + '.nupkg'
+Start-Sleep -Seconds 5
 choco push $nupkg
+
+### Delete the Chocolatey nupkg file as it's no longer needed.
+Remove-Item -Path .\$nupkg
