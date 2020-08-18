@@ -3,8 +3,8 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>playnite</id>
-    <version>7.7</version>
-    <releaseNotes>http://playnite.link/update/7.7.html</releaseNotes>
+    <version>7.9</version>
+    <releaseNotes>http://playnite.link/update/7.9.html</releaseNotes>
     <title>Playnite</title>
     <authors>Josef Numec</authors>
     <owners>Hyp5r</owners>
