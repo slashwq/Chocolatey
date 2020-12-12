@@ -1,7 +1,7 @@
 $ErrorActionPreference = 'Stop'
 
 $packageName= 'playnite'
-$url        = 'http://playnite.link/update/stable/8.8/Playnite88.exe'
+$url        = 'http://playnite.link/update/stable/8.10/Playnite810.exe'
 
 $packageArgs = @{
   packageName   = $packageName
@@ -10,7 +10,7 @@ $packageArgs = @{
 
   softwareName  = 'playnite*'
 
-  checksum      = 'CF0D8492261535DA585836EF8BB301D78305FF1C2F2F751671A78AB73EB2D8B0'
+  checksum      = 'CD515F8D7AFEE1AE683B98488C49486097B565B74CA34F1B0A01B8537AB94E89'
   checksumType  = 'sha256'
 
   silentArgs   = '/SP- /VERYSILENT /NORESTART'
