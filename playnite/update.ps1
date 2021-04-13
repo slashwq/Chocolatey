@@ -29,8 +29,8 @@ If ($local.version -eq $remote.info.latestVersion) {
 Write-Host "Version does not match."
 
 ### Stage variables for the download URL
-$dl = $remote.info.downloadServers | Select-Object -First 1
-$rn = $remote.info.releaseNotesUrlRoots | Select-Object -First 1
+$dl = "https://playnite.link/update/stable/"
+$rn = "https://playnite.link/update/"
 $sv = $remote.info.latestVersion -replace '[.]'
 $fulldl = $dl + $remote.info.latestVersion + '/' + 'Playnite' + $sv + '.exe'
 $fullrn = $rn + $remote.info.latestVersion + '.html'
