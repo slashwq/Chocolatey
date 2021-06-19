@@ -76,7 +76,7 @@ choco pack $local.nuspecpath
 
 ### Upload the new Chocolatey package.
 $nupkg = 'playnite.' + $remote.info.latestVersion + '.nupkg'
-Start-Sleep -Seconds 5
+Start-Sleep -Seconds 10
 choco push $nupkg
 
 ### Delete the Chocolatey nupkg file as it's no longer needed.
