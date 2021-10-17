@@ -10,15 +10,14 @@ $packageArgs = @{
   softwareExe   = 'Playnite*'
 }
 
-$uninstalled = $false
 [array]$key = Get-UninstallRegistryKey -SoftwareName $packageArgs['softwareName']
 
 if ($key.Count -eq 1) {
-  $key | % {
+  $key | ForEach-Object {
     $packageArgs['file'] = "$($_.UninstallString)"
     # Stop-Process called before the uninstall to make sure uninstall goes through successfully.
-    Write-Host Killing the $packageArgs['softwareExe'] process...
-    Get-Process -ProcessName $packageArgs['softwareExe'] | Stop-Process
+    Write-Output "Killing the $($packageArgs['softwareExe']) process..."
+    Get-Process -ProcessName $packageArgs['softwareExe'] -ErrorAction SilentlyContinue | Stop-Process
     Uninstall-ChocolateyPackage  @packageArgs
   }
 } elseif ($key.Count -eq 0) {
@@ -27,5 +26,5 @@ if ($key.Count -eq 1) {
   Write-Warning "$key.Count matches found!"
   Write-Warning "To prevent accidental data loss, no programs will be uninstalled."
   Write-Warning "Please alert package maintainer the following keys were matched:"
-  $key | % {Write-Warning "- $_.DisplayName"}
+  $key | ForEach-Object {Write-Warning "- $_.DisplayName"}
 }
