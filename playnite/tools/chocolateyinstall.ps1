@@ -1,14 +1,14 @@
 $ErrorActionPreference = 'Stop'
 
 $packageName= 'playnite'
-$url        = 'https://playnite.link/update/stable/9.3/Playnite94.exe'
+$url        = 'https://github.com/JosefNemec/Playnite/releases/download/9.12/Playnite912.exe'
 
 $packageArgs = @{
   packageName   = $packageName
   fileType      = 'exe'
   url           = $url
   softwareName  = 'playnite*'
-  checksum      = 'D080A74CED32E8B0A7823B9A12845EC7B15F6E6024CECFAA88EDDCCF096D71FA'
+  checksum      = '503CA0693DE6AFF04DD921AC640503D8F0E8D5E17262FC78B29C4CDB4EEB4E4C'
   checksumType  = 'sha256'
   silentArgs   = '/SP- /VERYSILENT /NORESTART'
   validExitCodes= @(0)
