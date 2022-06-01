@@ -1,14 +1,14 @@
 $ErrorActionPreference = 'Stop'
 
 $packageName= 'playnite'
-$url        = 'https://playnite.link/update/stable/9.15/Playnite915.exe'
+$url        = 'https://github.com/JosefNemec/Playnite/releases/download/9.18/Playnite918.exe'
 
 $packageArgs = @{
   packageName   = $packageName
   fileType      = 'exe'
   url           = $url
   softwareName  = 'playnite*'
-  checksum      = 'EB02C8B279A1EA0D8BE611B6F5D2344E33B6DFCA39E487A529ECBBB4C0EA752F'
+  checksum      = '80d9fbdd2f44703fa2ebea4e48ac90f91a0351293dd1fc036bc638e35c0d4d89'
   checksumType  = 'sha256'
   silentArgs   = '/SP- /VERYSILENT /NORESTART'
   validExitCodes= @(0)
@@ -19,3 +19,6 @@ $packageArgs = @{
 Write-Output "Killing the $($packageArgs['softwareExe']) process..."
 Get-Process -ProcessName $packageArgs['softwareExe'] -ErrorAction SilentlyContinue | Stop-Process
 Install-ChocolateyPackage @packageArgs
+Write-Output "Sleeping and preparing to kill elevated $($packageArgs['softwareExe']) process..."
+Start-Sleep -Seconds 5
+Get-Process -ProcessName $packageArgs['softwareExe'] -ErrorAction SilentlyContinue | Stop-Process
